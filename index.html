@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rose</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient-glow" aria-hidden="true">
+    <span class="ambient-glow__orb ambient-glow__orb--one"></span>
+    <span class="ambient-glow__orb ambient-glow__orb--two"></span>
+    <span class="ambient-glow__orb ambient-glow__orb--three"></span>
+    <span class="ambient-glow__dust"></span>
+  </div>
+
+  <div class="story-shell">
+    <header class="story-topbar">
+      <div class="story-brand">
+        <span class="story-brand__name">Rose</span>
+        <span class="story-brand__page" id="pageLabel">Cover</span>
+      </div>
+
+      <div class="story-actions">
+        <button class="ghost-button is-hidden" id="inboxButton" type="button">Inbox</button>
+        <button class="ghost-button" id="restartButton" type="button">Start Over</button>
+      </div>
+    </header>
+
+    <main class="book-stage">
+      <div class="book-frame" id="bookFrame">
+        <div class="book-frame__edge book-frame__edge--top"></div>
+        <div class="book-frame__edge book-frame__edge--bottom"></div>
+        <div class="book-spine" aria-hidden="true"></div>
+        <div class="page-shell" id="pageShell">
+          <section class="page page--cover is-active" id="page-cover" data-title="Cover">
+            <div class="cover-sheen" aria-hidden="true"></div>
+            <div class="cover-corners" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="cover-rose" aria-hidden="true">
+              <span class="cover-rose__stem"></span>
+              <span class="cover-rose__bud"></span>
+              <span class="cover-rose__leaf cover-rose__leaf--left"></span>
+              <span class="cover-rose__leaf cover-rose__leaf--right"></span>
+            </div>
+            <div class="page-content page-content--cover">
+              <p class="cover-overline">A Real Feel Storybook</p>
+              <h1 class="cover-title">Rose</h1>
+              <p class="cover-subtitle">Made with love, made to be opened slowly.</p>
+              <button class="romance-button romance-button--gold" id="openBookButton" type="button">Open The Book</button>
+            </div>
+          </section>
+
+          <section class="page" id="page-1" data-title="Little Bauni">
+            <div class="page-content page-content--center">
+              <p class="script-kicker">Page 1</p>
+              <h2 class="page-heading page-heading--script">Are you my adorable little bauni?</h2>
+              <p class="page-caption">Only one of these buttons is brave enough to stay still.</p>
+
+              <div class="quiz-buttons" id="quizButtons" data-no-swipe="true">
+                <button class="quiz-button quiz-button--yes" id="yesButton" type="button">Yes</button>
+                <button class="quiz-button quiz-button--no" id="noButton" type="button">No</button>
+              </div>
+
+              <p class="page-message" id="page1Message" aria-live="polite"></p>
+            </div>
+          </section>
+
+          <section class="page" id="page-2" data-title="Bloom">
+            <div class="page-content page-content--split">
+              <div class="flower-panel" data-no-swipe="true">
+                <p class="script-kicker">Page 2</p>
+                <h2 class="page-heading">Some roses only wait for the right care.</h2>
+                <p class="page-caption">Tap the water and let the withered bloom come alive.</p>
+
+                <div class="flower-stage" id="flowerStage">
+                  <div class="flower-stage__splash" id="flowerSplash" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="flower-pot">
+                    <span class="flower-pot__rim"></span>
+                    <span class="flower-pot__body"></span>
+                  </div>
+
+                  <div class="flower-stem"></div>
+                  <div class="flower-leaf flower-leaf--left"></div>
+                  <div class="flower-leaf flower-leaf--right"></div>
+
+                  <div class="rose-head" id="roseHead">
+                    <span class="rose-head__petal rose-head__petal--1"></span>
+                    <span class="rose-head__petal rose-head__petal--2"></span>
+                    <span class="rose-head__petal rose-head__petal--3"></span>
+                    <span class="rose-head__petal rose-head__petal--4"></span>
+                    <span class="rose-head__petal rose-head__petal--5"></span>
+                    <span class="rose-head__core"></span>
+                    <div class="rose-portrait" id="rosePortraitFrame">
+                      <img id="rosePortrait" alt="Bloom reveal portrait">
+                    </div>
+                  </div>
+                </div>
+
+                <button class="romance-button romance-button--rose" id="waterButton" type="button">Water The Rose</button>
+              </div>
+
+              <div class="page-side-note">
+                <p>First it bends, then it breathes, then it becomes the kind of rose that changes the whole page.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-3" data-title="Missing Piece">
+            <div class="page-content page-content--split page-content--page3">
+              <div class="puzzle-card" data-no-swipe="true">
+                <p class="script-kicker">Page 3</p>
+                <h2 class="page-heading">One piece is still waiting to be asked for.</h2>
+                <p class="page-caption">Tap two pieces to swap them until the picture is arranged.</p>
+
+                <div class="puzzle-board" id="puzzleBoard"></div>
+
+                <div class="missing-piece-note is-hidden" id="missingPieceNote">
+                  <div class="romantic-note">
+                    <p>Every time I see you, you make me freeze.<br>Is it you, or the effect of your rose?</p>
+                    <p>Khoya teri in ankhaa me (lost in your eyes)<br>Uljha in btta me (tied in your talks)<br>Gussa raakhe naak pe, chehre pe muskaan se<br>Wanna be confused, never behave rude<br>Just a little cutiepie,<br>Angry on me, don't know why</p>
+                    <p>Izzazat ho toh jahan ghumadu,<br>Izzazat ho toh apna hath thamadu<br>Fariyaad karo jo rahe hamesha on the eyepiece,<br>Wanna be, or can I be, your missing piece?</p>
+                  </div>
+
+                  <div class="decision-buttons">
+                    <button class="romance-button romance-button--gold" id="missingPieceYes" type="button">Yes</button>
+                    <button class="romance-button romance-button--ash" id="missingPieceNo" type="button">No</button>
+                  </div>
+                </div>
+
+                <div class="missing-piece-reveal is-hidden" id="missingPieceReveal">
+                  <div class="missing-piece-chip"></div>
+                  <p class="page-message">The missing piece arrived. The picture finally breathes whole.</p>
+                </div>
+              </div>
+
+              <div class="page-side-note">
+                <p>Not every unfinished thing is broken. Some are simply waiting for the right answer.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-4" data-title="Heart Door">
+            <div class="page-content page-content--split page-content--page4">
+              <div class="heart-puzzle-card" data-no-swipe="true">
+                <p class="script-kicker">Page 4</p>
+                <h2 class="page-heading">Take the heart to the door.</h2>
+                <p class="page-caption">Drag the heart along the zig-zag path without leaving the line.</p>
+
+                <div class="heart-maze" id="heartMaze">
+                  <svg class="heart-maze__svg" viewBox="0 0 460 340" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="mazeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#f9d6d7"></stop>
+                        <stop offset="100%" stop-color="#d47878"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path id="heartPath" d="M50 42 L200 42 L200 102 L120 102 L120 162 L300 162 L300 222 L170 222 L170 282 L392 282" />
+                    <rect class="heart-door" x="390" y="250" width="44" height="64" rx="10"></rect>
+                    <circle class="heart-door__knob" cx="422" cy="283" r="4"></circle>
+                  </svg>
+                  <button class="heart-token" id="heartToken" type="button" aria-label="Drag the heart"></button>
+                </div>
+              </div>
+
+              <div class="video-reveal is-hidden" id="videoReveal" data-no-swipe="true">
+                <video class="romance-video" id="roseVideo" controls preload="metadata">
+                  <source src="assets/rose-video.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">sorry mdm zii 😭, mne toh dekha bhi nhi un ldkiyo ko, ye baaddie best hai - shristipov_, and gulab hi khilta h yhn toh zii ✨🌹</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-5" data-title="Letter">
+            <div class="page-content page-content--letter">
+              <p class="script-kicker">Page 5</p>
+              <h2 class="page-heading">A page that waits for her words.</h2>
+              <div class="letter-card" data-no-swipe="true">
+                <p class="letter-intro">this is secret, no one can read it here except the one meant to. so write just what you want, jo bhi aap chahe, pros and cons too, bilkul freely.</p>
+                <label class="sr-only" for="letterArea">Write anything you want</label>
+                <textarea class="letter-area" id="letterArea" placeholder="Write here. It keeps saving on its own..." rows="7"></textarea>
+                <div class="letter-meta">
+                  <span id="letterStatus">Waiting for words...</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-6" data-title="Envelope Song">
+            <div class="page-content page-content--center">
+              <p class="script-kicker">Page 6</p>
+              <h2 class="page-heading">Open the envelope.</h2>
+              <p class="page-caption">Inside it, the page becomes music.</p>
+
+              <div class="envelope-stage" data-no-swipe="true">
+                <button class="envelope" id="envelopeButton" type="button" aria-label="Open the envelope">
+                  <span class="envelope__flap"></span>
+                  <span class="envelope__paper"></span>
+                  <span class="envelope__seal">Rose</span>
+                </button>
+
+                <div class="music-player is-hidden" id="musicPlayer">
+                  <div class="music-player__art"></div>
+                  <div class="music-player__body">
+                    <p class="music-player__eyebrow">For you</p>
+                    <h3 class="music-player__title">Envelope Melody</h3>
+                    <p class="music-player__subtitle">A small player with a vintage heart.</p>
+
+                    <div class="music-player__controls">
+                      <button class="music-toggle" id="musicToggle" type="button">Pause</button>
+                      <div class="music-progress">
+                        <span id="musicCurrent">0:00</span>
+                        <input id="musicSeek" type="range" min="0" max="100" value="0" step="0.1">
+                        <span id="musicDuration">0:00</span>
+                      </div>
+                    </div>
+                  </div>
+                  <audio id="roseSong" preload="metadata">
+                    <source src="assets/rose-song.mp3" type="audio/mpeg">
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-7" data-title="For You">
+            <div class="page-content page-content--final">
+              <p class="script-kicker">Final Page</p>
+              <h2 class="page-heading page-heading--script">I tried a little, hope you like it.</h2>
+              <p class="final-main-text">I will just say that it's for you, not for appreciation.</p>
+              <blockquote class="final-quote">
+                some flowers are prohibited to touch, some treasures are meant to search not to acquire, sometimes it's better to watch then having the remote, cuz we never know the sail of sea, the touch of flowers and the nature of hours
+              </blockquote>
+            </div>
+          </section>
+
+          <section class="page" id="page-8" data-title="More Pages">
+            <div class="page-content page-content--builder">
+              <p class="script-kicker">Next Page</p>
+              <h2 class="page-heading">The journey doesn't end here.</h2>
+              <p class="page-caption">Add more pages whenever you want and keep extending the story.</p>
+
+              <div class="builder-card" data-no-swipe="true">
+                <button class="romance-button romance-button--gold" id="toggleCustomForm" type="button">Add More Pages</button>
+
+                <form class="custom-form is-hidden" id="customForm">
+                  <input id="customPageId" type="hidden">
+                  <label>
+                    <span>Page Title</span>
+                    <input id="customTitle" maxlength="70" placeholder="A new page title">
+                  </label>
+
+                  <label>
+                    <span>Page Note</span>
+                    <textarea id="customBody" rows="5" placeholder="Write what you want this new page to say..."></textarea>
+                  </label>
+
+                  <label>
+                    <span>Accent Mood</span>
+                    <select id="customAccent">
+                      <option value="rose">Rose</option>
+                      <option value="gold">Gold</option>
+                      <option value="night">Night</option>
+                      <option value="sage">Sage</option>
+                    </select>
+                  </label>
+
+                  <div class="custom-form__actions">
+                    <button class="romance-button romance-button--rose" type="submit">Save Page</button>
+                    <button class="ghost-button" id="cancelCustomForm" type="button">Cancel</button>
+                  </div>
+                </form>
+
+                <div class="custom-pages-list" id="customPagesList"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="burn-overlay is-hidden" id="burnOverlay" aria-hidden="true">
+          <div class="burn-overlay__tear burn-overlay__tear--left"></div>
+          <div class="burn-overlay__tear burn-overlay__tear--right"></div>
+          <div class="burn-overlay__fire">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="burn-overlay__ash"></div>
+        </div>
+
+        <div class="never-ending-book is-hidden" id="neverEndingBook">
+          <div class="never-ending-book__cover">
+            <p class="never-ending-book__title">I am a never ending story for you</p>
+            <p class="never-ending-book__note">This one stays closed after "No".</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="story-nav">
+      <button class="nav-button" id="prevButton" type="button">Previous</button>
+      <p class="nav-hint">Swipe left or right on the page to turn it.</p>
+      <button class="nav-button" id="nextButton" type="button">Next</button>
+    </footer>
+  </div>
+
+  <div class="modal is-hidden" id="inboxModal" role="dialog" aria-modal="true" aria-labelledby="inboxTitle">
+    <div class="modal__card">
+      <div class="modal__header">
+        <h2 id="inboxTitle">Private Inbox</h2>
+        <button class="ghost-button" id="closeInboxButton" type="button">Close</button>
+      </div>
+      <div class="modal__body" id="inboxEntries"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

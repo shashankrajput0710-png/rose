@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5ddd1" />
+      <stop offset="100%" stop-color="#d6a7a3" />
+    </linearGradient>
+    <linearGradient id="glow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#e48b9b" />
+      <stop offset="100%" stop-color="#8f3144" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" rx="300" fill="url(#bg)" />
+  <circle cx="300" cy="220" r="95" fill="url(#glow)" opacity="0.85" />
+  <path d="M160 470c35-98 95-147 140-147s105 49 140 147" fill="#fff1ec" opacity="0.88" />
+  <circle cx="300" cy="300" r="195" fill="none" stroke="#fff8f0" stroke-width="16" opacity="0.5" />
+  <text x="300" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#6d2632">Drop page2-photo.jpg here later</text>
+</svg>
